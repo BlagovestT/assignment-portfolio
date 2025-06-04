@@ -7,7 +7,6 @@
   --color-text: #cccccc;
   --color-heading: #f8f8f8;
   --color-card-bg: #1e1e2f;
-  --color-link-hover: #393e46;
   --color-border: #2a2a2a;
 
   /* Fonts */
@@ -20,6 +19,7 @@
 }
 
 * {
+  box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
@@ -29,6 +29,7 @@ body {
   font-family: var(--font-body);
   background-color: var(--color-bg);
   color: var(--color-text);
+  overflow-x: hidden;
 }
 
 h1,
@@ -71,6 +72,8 @@ header nav ul {
   display: flex;
   flex-direction: row;
   gap: 30px;
+  margin: 0;
+  padding: 0;
 }
 
 header nav ul li {
@@ -88,7 +91,6 @@ main {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  /* gap: 150px; */
   padding: 10px;
 }
 
@@ -140,7 +142,7 @@ main {
 .skills {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
   flex-wrap: wrap;
   gap: 30px;
@@ -198,7 +200,7 @@ main {
 }
 
 .skills .icons-container .fa-github {
-  color: #f05032;
+  color: #fff;
 }
 
 /* Projects section styles */
@@ -330,6 +332,7 @@ main {
   background-color: var(--color-primary-light);
 }
 
+/* footer section styles */
 footer {
   display: flex;
   flex-direction: column;
@@ -340,4 +343,100 @@ footer {
   margin-top: 30px;
   text-align: center;
   box-shadow: var(--box-shadow);
+}
+
+footer .social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 10px;
+}
+
+/* Responsive styles */
+@media (max-width: 1280px) {
+  #about,
+  #projects {
+    height: auto;
+  }
+}
+
+@media (max-width: 1024px) {
+  #about,
+  #projects {
+    padding: 40px 0;
+  }
+  #projects .project-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    align-items: center;
+  }
+  header .fa-b {
+    display: none;
+  }
+  header nav ul {
+    gap: 15px;
+  }
+  main {
+    padding: 5px;
+  }
+  #about,
+  #projects,
+  #contact {
+    padding: 20px 0;
+  }
+  #about .about-container,
+  #projects .project-container article,
+  #contact form {
+    padding: 10px;
+    max-width: 98vw;
+  }
+  #about .about-image-container,
+  #projects .project-container .image-container {
+    max-width: 98vw;
+  }
+  .skills .icons-container i {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header nav ul {
+    flex-direction: row;
+    gap: 30px;
+  }
+  #about,
+  #projects,
+  #contact {
+    padding: 10px 0;
+  }
+  #about .about-container,
+  #projects .project-container article,
+  #contact form {
+    padding: 5px;
+    max-width: 100vw;
+  }
+  #about .about-image-container,
+  #projects .project-container .image-container {
+    max-width: 100vw;
+  }
+  .skills .icons-container {
+    gap: 10px;
+  }
+  .skills .icons-container i {
+    font-size: 1.5rem;
+  }
+  #contact form input,
+  #contact form textarea {
+    width: 100%;
+  }
 }
